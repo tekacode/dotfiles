@@ -14,10 +14,10 @@ fi
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mmd/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 
-export PATH="$PATH:/Users/mmd/flutter/bin"
+export PATH="$PATH:${HOME}/flutter/bin"
 
 
 export PATH="$PATH:/Applications/apache-maven-3.6.3/bin"
