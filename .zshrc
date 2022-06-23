@@ -1,35 +1,39 @@
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+[ ##-s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+##if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  ##source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+##fi
 
 # If you come from bash you might have to change your $PATH.
 
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
+ZSH_THEME="cloud"
+
+plugins=(git zsh-nvm zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+##export PATH="$PATH:${HOME}/flutter/bin"
 
 
-export PATH="$PATH:${HOME}/flutter/bin"
+##export PATH="$PATH:/Applications/apache-maven-3.6.3/bin"
 
 
-export PATH="$PATH:/Applications/apache-maven-3.6.3/bin"
+##export PATH="$PATH:/usr/local/mysql/bin"
 
-
-export PATH="$PATH:/usr/local/mysql/bin"
-
-export PATH="$PATH:/usr/local/bin/aws"
-export PATH="$PATH:/usr/local/bin/aws_completer"
+##export PATH="$PATH:/usr/local/bin/aws"
+##export PATH="$PATH:/usr/local/bin/aws_completer"
 
 # help us to open vs code from terminal using code . command 
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+##code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -38,7 +42,7 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # ZSH_THEME="af-magic"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+##ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -55,7 +59,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 
-DISABLE_AUTO_UPDATE="true"
+##DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -94,9 +98,9 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+##plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+##source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -164,13 +168,13 @@ alias vim="nvim"
 alias priv="cd $OLDPWD"
 
 # Go to trush folder
-alias trash="~/.local/share/vifm/Trash/"
+##alias trash="~/.local/share/vifm/Trash/"
 
 # sercices list
-alias sl="service --status-all"
+##alias sl="service --status-all"
 
 # Bind vim mode to linux
-bindkey -v
+##bindkey -v
 
 alias c='clear'
 
@@ -190,7 +194,7 @@ alias t='cd tutorials_git/ && vifm .'
 
 #clean catch files
 
-alias cca='sudo apt-get clean;sudo apt-get autoremove --purge;sudo apt-get autoremove;'
+##alias cca='sudo apt-get clean;sudo apt-get autoremove --purge;sudo apt-get autoremove;'
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -273,7 +277,7 @@ alias .......="cd ../../../../../.."
 # Then move in to the specific project folder and run this command. If it says no django, run this: pip3 install django
 # --------------------------
 # MYSQL
-alias mysql='mysql -u root -p'
+##alias mysql='mysql -u root -p'
 # username: tf, password: Jimma@309 
 # SELECT User FROM mysql.user;
 # --------------------------
@@ -320,15 +324,15 @@ alias mysql='mysql -u root -p'
 
 # --------------------------
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+##autoload -U +X bashcompinit && bashcompinit
+##complete -o nospace -C /opt/homebrew/bin/terraform terraform
 # --------------------------
 # TERMINAL PROMPT
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+##[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+##[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
 # --------------------------
