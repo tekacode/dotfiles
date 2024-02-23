@@ -1,5 +1,3 @@
-set shell=/bin/zsh\ -ic\ vifm
-
 set number
 set relativenumber
 set showcmd
@@ -74,7 +72,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h 
 map <C-l> <C-W>l
 
-
 " -------PLUGINS-------
 call plug#begin('~/.config/nvim/autoload/plug.vim')
 
@@ -85,7 +82,6 @@ Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'valloric/youcompleteme'
 Plug 'scrooloose/nerdtree'
 
 
@@ -105,4 +101,5 @@ let g:ctrlp_show_hidden = 1 " Allow hidden files be searched
 map s <leader><leader>s
 
 let g:user_emmet_leader_key=',' "triggers Emmet with two commas  i    nstead of ctr,y and ,
+
 
