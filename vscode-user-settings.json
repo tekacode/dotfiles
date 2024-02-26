@@ -2,9 +2,6 @@
   "editor.tabSize": 2,
   "vim.neovimPath": "/opt/homebrew/bin/nvim",
   "editor.multiCursorModifier": "ctrlCmd",
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
   "keyboard.dispatch": "keyCode",
   "emmet.showSuggestionsAsSnippets": true,
   "editor.suggestSelection": "first",
@@ -30,10 +27,6 @@
     {
       "after": ["<leader>", "<leader>", "s"],
       "before": ["s"]
-    },
-    {
-      "after": ["<Esc>"],
-      "before": ["j", "k"]
     }
   ],
   "liveServer.settings.donotShowInfoMsg": true,
@@ -65,7 +58,6 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "dart.flutterSdkPath": "/Users/mmd/flutter",
   "breadcrumbs.enabled": false,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
@@ -76,12 +68,10 @@
   "editor.snippetSuggestions": "top",
   "vim.vimrc.enable": true,
   "redhat.telemetry.enabled": false,
-  "dart.openDevTools": "flutter",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.startupEditor": "none",
-  "rapidapi.terminalLink.enabled": false,
   "git.openRepositoryInParentFolders": "never",
   "editor.guides.bracketPairs": true,
   "terminal.integrated.fontSize": 18,
@@ -130,6 +120,10 @@
   "diffEditor.renderSideBySide": false,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "hediet.vscode-drawio.resizeImages": null,
+  "mojo.onSettingsChanged": "restart",
 
-  
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

@@ -1,0 +1,49 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+k",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift shift",
+    "command": "workbench.action.quickOpen",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift shift",
+    "command": "workbench.action.quickOpen",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.nextEditor"
+  },
+
+  {
+    "key": "j",
+    "command": "type",
+    "args": { "text": "j" },
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible && !findWidgetVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "k",
+    "command": "type",
+    "args": { "text": "k" },
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible && !findWidgetVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "j k",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible && !findWidgetVisible && vim.mode == 'Insert'"
+  }
+]
