@@ -1,81 +1,121 @@
 {
+  // Editor
   "editor.tabSize": 2,
-  "vim.neovimPath": "/opt/homebrew/bin/nvim",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "keyboard.dispatch": "keyCode",
-  "emmet.showSuggestionsAsSnippets": true,
+  "editor.fontFamily": "JetBrains Mono",
   "editor.suggestSelection": "first",
-  "html.format.indentHandlebars": true,
-  "emmet.excludeLanguages": ["markdown"],
-  "vim.easymotion": true,
-  "vim.sneak": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
   "editor.quickSuggestionsDelay": 12,
-  "vim.neovimUseConfigFile": true,
-  "git.ignoreMissingGitWarning": true,
+  "editor.accessibilityPageSize": 18,
+  "editor.fontSize": 18,
   "editor.accessibilitySupport": "off",
-  "debug.onTaskErrors": "debugAnyway",
-  "editor.fontSize": 17,
-  "editor.accessibilityPageSize": 17,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "vue-html": "html"
-  },
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "after": ["<leader>", "<leader>", "s"],
-      "before": ["s"]
-    }
-  ],
-  "liveServer.settings.donotShowInfoMsg": true,
-  "json.schemas": [],
+  "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": true,
-  "vim.enableNeovim": true,
-  "window.zoomLevel": 2,
-  "vim.smartRelativeLine": true,
-  "explorer.openEditors.visible": 8,
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
   "editor.formatOnSave": true,
-  "files.exclude": {
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.classpath": true,
-    "**/.factorypath": true
-  },
-  "[dart]": {
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off",
-    "editor.selectionHighlight": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80]
-  },
-  "html.format.indentInnerHtml": true,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "breadcrumbs.enabled": false,
-  "terminal.integrated.allowChords": false,
-  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.suggest.showMethods": true,
   "editor.suggest.preview": true,
   "editor.acceptSuggestionOnEnter": "on",
   "editor.snippetSuggestions": "top",
-  "vim.vimrc.enable": true,
-  "redhat.telemetry.enabled": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.startupEditor": "none",
-  "git.openRepositoryInParentFolders": "never",
   "editor.guides.bracketPairs": true,
+  // Terminal
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.fontSize": 18,
+  // Vim
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "after": ["<leader>", "<leader>", "s"],
+      "before": ["s"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["bookmarks.jumpToPrevious"]
+    }
+  ],
+  "vim.smartRelativeLine": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.vimrc.enable": true,
+  // Emmet
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  // Html
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  // Workbench
+  "workbench.startupEditor": "none",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.settings.applyToAllProfiles": ["maven.executable.path"],
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "workbench.sideBar.location": "right",
+
+  "window.zoomLevel": 2,
+  "keyboard.dispatch": "keyCode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.ignoreMissingGitWarning": true,
+  "debug.onTaskErrors": "debugAnyway",
+  "explorer.openEditors.visible": 8,
+  "json.schemas": [],
+  "files.exclude": {
+    //hides files in explorer view of th editor
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.classpath": true,
+    "**/.factorypath": true
+  },
+
+  "breadcrumbs.enabled": false,
+  "redhat.telemetry.enabled": false,
+
+  "git.openRepositoryInParentFolders": "never",
   "editor.tokenColorCustomizations": {
+    //customize syntax highlighting and other text styling properties for specific code tokens or TextMate scopes.
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
     "textMateRules": [
       {
         "name": "One Dark italic",
@@ -113,17 +153,7 @@
       }
     ]
   },
-  "RainbowBrackets.depreciation-notice": false,
   "files.autoSave": "afterDelay",
-  "workbench.panel.defaultLocation": "right",
-  "workbench.settings.applyToAllProfiles": ["maven.executable.path"],
-  "diffEditor.renderSideBySide": false,
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "hediet.vscode-drawio.resizeImages": null,
-  "mojo.onSettingsChanged": "restart",
-
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "chatgpt.lang": "en"
 }
