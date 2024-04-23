@@ -56,7 +56,6 @@
       "after": ["<Esc>"]
     }
   ],
-  "vim.vimrc.enable": true,
   // Emmet
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.excludeLanguages": ["markdown"],
