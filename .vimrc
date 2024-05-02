@@ -1,105 +1,102 @@
-set number
-set relativenumber
-set showcmd
-set colorcolumn=80
-set tabstop=1
+"===============================
+" Basic Vim Configuration
+"===============================
 
-filetype indent on
-set autoindent
+set number                " Show line numbers
+set relativenumber   " Show relative numbers for all other lines
+set showcmd               " Display incomplete commands
+set colorcolumn=80        " Highlight the 80th column (recommended line width)
+set showmatch             " Highlight matching braces, parentheses, etc.
 
-set showcmd
+"===============================
+" Indentation and Tabs
+"===============================
 
-"set spelllang=en_us
-"set spell
+set tabstop=2             " Set tab stops to 2 spaces
+set shiftwidth=2          " Number of spaces for each indentation
+set expandtab             " Use spaces instead of tabs
 
-syntax on
+"===============================
+" Filetypes and Syntax
+"===============================
 
-set showmatch " shows maching curly brace
+filetype indent on        " Enable filetype-based indentation
+syntax on                 " Enable syntax highlighting
 
-cnoremap ic :q! <CR> "ignore change
-cnoremap : CtrlPMRU<CR>
-cnoremap w :w! <CR><esc>
-cnoremap q :q <CR>
+"===============================
+" Key Mappings
+"===============================
 
-cnoremap sr %s/ " search and replace
+" Exit insert mode with 'jk'
+inoremap jk <Esc>
 
-cnoremap rv source ~/.vimrc <CR> "reload vimrc
+" Quickly insert a new line without entering insert mode
+nnoremap kj o<Esc>
 
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
+" Select all text
+nnoremap vA ggVG
 
-"run,compile files from vim
-cnoremap js :! node % <CR>
-cnoremap ct :! tsc % <CR>
-cnoremap rs :! sudo mysql -u root -p jpa_hibernate < sql.sql <CR>
+" Quick save with Shift+s
+nnoremap <S-s> :w<CR>
 
-cnoremap cj :! javac % <CR>
-cnoremap rj ! java 
-cnoremap cja :! javac *.java <CR>
+" Window navigation with Ctrl + direction
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
-cnoremap rp :! python3 % <CR>
-cnoremap rd :! dart % <CR>
+"===============================
+" Plugin Configurations
+"===============================
 
-cnoremap rg :! go run % <CR> " Run go file
-cnoremap rr :! Rscript % <CR> " Run R file
+call plug#begin('~/.vim/plugged/')
 
-cnoremap cc :! gcc -o c_my % <CR> "compile c
-cnoremap rc :!./c_my <CR> " Run c
-
-cnoremap ccpp :! g++ -o cpp_my % <CR> "compile cpp
-cnoremap rcpp:! ./cpp_my <CR> " run cpp
-
-cnoremap ck :! kotlinc kt.kt -include-runtime -d kt.jar <CR> " Compile Kotlin
-
-cnoremap rh :! php % <CR> " Run PHP
-cnoremap rb :! bash % <CR> " Run bash
-cnoremap rk :! java -jar kt.jar <CR> " Run Kotlin
-
-" imap jk <Esc> " Maps escap key
-
-nnoremap kj o<Esc> " Quickly insert an empty new line without entering insert mode
-
-nnoremap vA ggVG " Select all text
-
-nnoremap <S-s> :w<CR> " Quick Save
-
-map <C-j> <C-W>j 
-map <C-k> <C-W>k 
-map <C-h> <C-W>h 
-map <C-l> <C-W>l
-
-" -------PLUGINS-------
-call plug#begin('~/.config/nvim/autoload/plug.vim')
-
-Plug 'easymotion/vim-easymotion'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'yggdroot/indentline'
-Plug 'mattn/emmet-vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdtree'
-
+Plug 'easymotion/vim-easymotion'  " Navigation plugin
+Plug 'kien/ctrlp.vim'             " File search plugin
+Plug 'tpope/vim-surround'         " Surround text with delimiters
+Plug 'tpope/vim-commentary'       " Commenting plugin
+Plug 'yggdroot/indentline'        " Display vertical indent lines
+Plug 'mattn/emmet-vim'            " HTML/CSS/JS snippets
+Plug 'junegunn/vim-easy-align'    " Easy text alignment
+Plug 'scrooloose/nerdtree'        " File tree explorer
+Plug 'ThePrimeagen/vim-be-good'   " Vim practice exercises
 
 call plug#end()
 
+"===============================
+" EasyMotion Configuration
+"===============================
 
+" Enable EasyMotion key mappings
+nmap s <Plug>(easymotion-overwin-f)
 
-set ts=2 sw=2 et
-let g:indentLine_char = '┆'
+"===============================
+" Command-Line Shortcuts
+"===============================
 
-let g:ctrlp_map = '<c-p>' " To invoke CtrlP do this mapping
-cnoremap : CtrlPMRU<CR>
-let g:ctrlp_map = 'Ctrlp'
-let g:ctrlp_working_path_mod= 'a' " Specify working directory at s    tart
-let g:ctrlp_show_hidden = 1 " Allow hidden files be searched
+" Quick commands
+cnoremap ic :q!<CR>            " Ignore changes
+cnoremap w :w!<CR>             " Force save
+cnoremap sr %s/                " Quick search and replace
+cnoremap rv :source ~/.vimrc<CR> " Reload .vimrc file
 
-map s <leader><leader>s
-
-let g:user_emmet_leader_key=',' "triggers Emmet with two commas  i    nstead of ctr,y and ,
+" Compile and Run commands for various languages
+cnoremap js :!node %<CR>          " Run JavaScript
+cnoremap ct :!tsc %<CR>           " Compile TypeScript
+cnoremap rs :!sudo mysql -u root -p jpa_hibernate < sql.sql<CR>  " MySQL
+cnoremap cj :!javac %<CR>         " Compile Java
+cnoremap rj :!java %<CR>          " Run Java
+cnoremap rp :!python3 %<CR>       " Run Python
+cnoremap rd :!dart %<CR>          " Run Dart
+cnoremap rg :!go run %<CR>        " Run Go
+cnoremap rr :!Rscript %<CR>       " Run R
+cnoremap cc :!gcc -o c_my %<CR>   " Compile C
+cnoremap rc :!./c_my<CR>          " Run C
+cnoremap ccpp :!g++ -o cpp_my %<CR>  " Compile C++
+cnoremap rcpp :!./cpp_my<CR>      " Run C++
+cnoremap ck :!kotlinc kt.kt -include-runtime -d kt.jar<CR>  " Compile Kotlin
+cnoremap rk :!java -jar kt.jar<CR>  " Run Kotlin
+cnoremap rh :!php %<CR>           " Run PHP
+cnoremap rb :!bash %<CR>          " Run Bash
 
 
