@@ -1,50 +1,66 @@
-export PATH="/opt/homebrew/bin/python3:$PATH"
+# Environment Variables
+export MODULAR_HOME="$HOME/.modular"
+export PATH="/opt/homebrew/bin/python3:$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH="$HOME/.console-ninja/.bin:$PATH"
 
+# ZSH Configuration
 ZSH_THEME="cloud"
-export PS1='%1d$ '
+export PS1='%1~$ '  # Shows current directory in the prompt
 
-# go to last working dirctory
+# Aliases
 alias priv="cd $OLDPWD"
-
-# Go to trush folder
-alias trash="~/.local/share/vifm/Trash/"
-
-# sercices list
+alias trash="cd ~/.local/share/vifm/Trash/"  # Corrected to ensure alias works
 alias sl="service --status-all"
-
 alias c='clear'
-
 alias kill='sudo kill -9 $(sudo lsof -t -i:3000)'
-
 alias e='exit'
-
 alias rs='./mvnw spring-boot:run'
-
 alias o='ssh ubuntu@54.90.87.142'
-
 alias v='vim'
-
 alias f='vifm .'
-
 alias python='python3'
-
-alias learn='cd Desktop/learn/ && vifm .'
-
+alias learn='cd ~/Desktop/learn/ && vifm .'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-alias startMysqlServer='brew services start mysql'
-alias stopMysqlServer='brew services stop mysql'
-alias mysql='mysql -u root -p'
+# Functions for Services
+service_mysql() {
+    if [ "$1" = "start" ]; then
+        brew services start mysql
+    elif [ "$1" = "stop" ]; then
+        brew services stop mysql
+    else
+        echo "Usage: service_mysql start|stop"
+    fi
+}
 
-alias startPostgreServer='brew services start postgresql@14'
-alias stopPostgreServer='brew services stop postgresql@14'
-alias psql='psql -U postgres -h localhost -p 5432'
+service_postgres() {
+    if [ "$1" = "start" ]; then
+        brew services start postgresql@14
+    elif [ "$1" = "stop" ]; then
+        brew services stop postgresql@14
+    else
+        echo "Usage: service_postgres start|stop"
+    fi
+}
 
-alias startMongoServer='brew services start mongodb-community'
-alias stopMongoServer='brew services stop mongodb-community'
-alias mongo='/opt/homebrew/bin/mongo'
+service_mongo() {
+    if [ "$1" = "start" ]; then
+        brew services start mongodb-community
+    elif [ "$1" = "stop" ]; then
+        brew services stop mongodb-community
+    else
+        echo "Usage: service_mongo start|stop"
+    fi
+}
 
+# Angular CLI Autocompletion
+if command -v ng > /dev/null; then
+    source <(ng completion script)
+fi
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Custom Theme for Prompt
+# If you want more customization, consider using a prompt framework or different themes.
+
+# Load Plugins if using Oh My Zsh or other plugin managers
+# source $ZSH/oh-my-zsh.sh
