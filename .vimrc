@@ -48,6 +48,9 @@ nnoremap <C-l> <C-W>l
 "===============================
 " Plugin Configurations
 "===============================
+" To install Plug dependency manager, use the following code
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 call plug#begin('~/.vim/plugged/')
 
