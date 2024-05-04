@@ -23,6 +23,24 @@ alias learn='cd ~/Desktop/learn/ && vifm .'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+# Function to kill a process by a given port number
+kill_port() {
+    if [ -z "$1" ]; then
+        echo "Usage: kill_port PORT_NUMBER"
+        return 1
+    fi
+
+    PORT=$1
+    PID=$(sudo lsof -t -i:"$PORT")
+
+    if [ -n "$PID" ]; then
+        echo "Killing process(es) on port $PORT with PID(s): $PID"
+        sudo kill -9 $PID
+    else
+        echo "No process found listening on port $PORT"
+    fi
+}
+
 # Functions for Services
 service_mysql() {
     if [ "$1" = "start" ]; then
