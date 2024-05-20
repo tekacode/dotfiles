@@ -69,6 +69,7 @@ Plug 'junegunn/vim-easy-align'    " Easy text alignment
 Plug 'scrooloose/nerdtree'        " File tree explorer
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Installs binary code for file search
 Plug 'junegunn/fzf.vim'           " File search
+Plug 'jiangmiao/auto-pairs'       " insert pairing tags
 
 call plug#end()
 
