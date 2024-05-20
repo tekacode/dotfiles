@@ -39,6 +39,9 @@ nnoremap vA ggVG
 " Quick save with Shift+s
 nnoremap <S-s> :w<CR>
 
+" Quick search file
+nnoremap :: :Files<CR>
+
 " Window navigation with Ctrl + direction
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
@@ -61,7 +64,8 @@ Plug 'yggdroot/indentline'        " Display vertical indent lines
 Plug 'mattn/emmet-vim'            " HTML/CSS/JS snippets
 Plug 'junegunn/vim-easy-align'    " Easy text alignment
 Plug 'scrooloose/nerdtree'        " File tree explorer
-Plug 'ThePrimeagen/vim-be-good'   " Vim practice exercises
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Installs binary code for file search
+Plug 'junegunn/fzf.vim'           " File search
 
 call plug#end()
 
