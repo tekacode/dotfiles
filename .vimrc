@@ -42,6 +42,9 @@ nnoremap <S-s> :w<CR>
 " Quick search file
 nnoremap :: :Files<CR>
 
+" Let the search file window take the bottom 40% instead of pop-up
+let g:fzf_layout= { 'down': '40%' }
+
 " Window navigation with Ctrl + direction
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
