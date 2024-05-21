@@ -39,8 +39,11 @@ nnoremap vA ggVG
 " Quick save with Shift+s
 nnoremap <S-s> :w<CR>
 
-" Quick search file
+" Quick search all file
 nnoremap :: :Files<CR>
+
+" Quick search only in Git folder
+nnoremap ::: :GitFiles<CR>
 
 " Let the search file window take the bottom 40% instead of pop-up
 let g:fzf_layout= { 'down': '40%' }
