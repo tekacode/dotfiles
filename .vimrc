@@ -39,14 +39,23 @@ nnoremap vA ggVG
 " Quick save with Shift+s
 nnoremap <S-s> :w<CR>
 
-" Quick search all file
+" Quick search all files using fzf.vim plugin
 nnoremap :: :Files<CR>
 
-" Quick search only in Git folder
+" Quick search for files only in Git folder(search git)
 nnoremap ::: :GitFiles<CR>
 
-" Let the search file window take the bottom 40% instead of pop-up
+" Let the search fzf.vim file window take the bottom 40% instead of pop-up
 let g:fzf_layout= { 'down': '40%' }
+
+" Use ripgrep with fzf.vim for searching TEXT in files, (brew install ripgrep, sudo apt-get install ripgrep) 
+if executable('rg')
+  command! -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+        \   fzf#vim#with_preview(), <bang>0)
+endif
+
 
 " Window navigation with Ctrl + direction
 nnoremap <C-j> <C-W>j
