@@ -92,6 +92,9 @@ call plug#end()
 " Enable EasyMotion key mappings
 nmap s <Plug>(easymotion-overwin-f)
 
+" EasyMotion search in visual mode
+vmap s <Plug>(easymotion-overwin-f)
+
 "===============================
 " Command-Line Shortcuts
 "===============================
