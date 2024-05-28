@@ -1,0 +1,56 @@
+### VS Code Notes
+
+- Cmd + P + @ + keyword -> to find methods or variables in the open file
+- Cmd + p + # + keyword -> to find className, interface, method, variable in the entire project
+- Right click in the terminals and change their color and icon not to configure the terminal for different purpose
+- Cmd + o -> open new project
+- Type rename in the command palette to change name of get branch
+- Red arrow along the side of the getter shows deleted line
+- Click on the opened file name to see changes side by side
+- To switch branch, click the branch name and change the branch in the command palette
+- To merge the new branch with main, switch to main then click on the three dots on the top left corner, click merge branch then select the new branch
+- To clone repo from Github copy the url, then type clone in the command palette then pest the url,
+- To clone your own project from GitHub just type clone in the command palette, you will see the list of the repositories you have
+- Cmd + 0 focus your cursor to the side bar, also cmd + 1 will take the focus back to editor window
+- You can drag your terminal and drop it alongside the editor windows so they can be found by file piker now
+- To see where a variable or a method used, highlight it and click cmd + shift + f12
+- After you opened the command palette, if you remove the > sign it will change it to file search mode or visversa
+- You can search a command by the command name or using short cut key it is using
+- If you type “show all commands” in the command palate it will show all available commands
+- If you write “Open Recent” in the command pallet it will help you to open your recent projects
+- If you highlight a text and click the cmd + shift + F will search the the highlighted text in the entire project and if you want to replace the same text with another you can click the down arrow next the search bar and enter the text you are replacing with
+- Command pallet -> advanced new file -> create new file
+- Command pallet -> split editor
+- Right click on a method name -> rename symbol -> will rename the method name in the entire application
+- Command pallet -> recommended extension-> save the extension name in the array and pass it to other coders
+- Command pallet -> type ‘install code in Path’ -> will make you to open projects using code.
+- Ctrl + - takes you to where you were
+- Vim mark across multiple files —> m + a capital of a character
+- To highlight a text and add tags at the end —> select the text in vim visual mode —> press S< —> add the tag
+- Vs cod to search symbols from entire module —> #symbole name , from a single file —> %symbole name
+
+### Vim Notes
+
+- Vim mark in the same file —> m + a character
+- VS code To add multiple cursor at the same time on identical text-> cmd + shift + l
+- Vim command to see vim register or to see the text that has been yanked & stored-> :reg
+- To past past what is in the seventh registery “ 7 p
+- To copy text to a spesifice registery(8th registry) —> visualize the text first then “ y 8
+- Edit a file —> :e filename
+- To copy text to special system clipboard in Mac so that you can past it in another programmes-> hi light the text “ \* y
+- To past the name of the current open file —> “ % p
+- All the macros you recoreded can be see in the reg
+- Vim macros can be recored by pressing the q then a character and stoped by pressing q again and the can be applied by using @ and the macro character
+- To apply a macro to multiple lines —> 5 @ h
+- To copy a text in to registry —> select the text then “ a y , which saves the text as ‘a’ in the registry. To access it -> “ a p
+- To see the current buffer —> :ls
+- To delete the current buffer —> :bd
+- To cd to different folder —> :cd folder name
+- To open terminal with vim —> :term
+- To view all currently opened files in vim session—>:ls or :buffers
+- To fold html tag block —> zfat (fold around take) and to unfold press the l (el)
+- To search a text in a folder —> :Rg thetext
+- To refresh .vimrc —> :source%
+- To split your vim window into vertical split —> ctrl + w + v
+- To move the cursor between the spliced windows —> ctrl + w + hjkl
+- To google cursor b/n terminal and vim editor —> ctrl w w
