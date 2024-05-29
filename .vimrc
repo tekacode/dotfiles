@@ -3,7 +3,7 @@
 "===============================
 
 set number                " Show line numbers
-set relativenumber   " Show relative numbers for all other lines
+set relativenumber        " Show relative numbers for all other lines
 set showcmd               " Display incomplete commands
 set colorcolumn=80        " Highlight the 80th column (recommended line width)
 set showmatch             " Highlight matching braces, parentheses, etc.
@@ -100,28 +100,19 @@ vmap s <Plug>(easymotion-overwin-f)
 "===============================
 
 " Quick commands
-cnoremap ic :q!<CR>            " Ignore changes
-cnoremap w :w!<CR>             " Force save
-cnoremap sr %s/                " Quick search and replace
-cnoremap rv :source ~/.vimrc<CR> " Reload .vimrc file
+cnoremap ic :q!<CR>
+cnoremap w :w!<CR>
+cnoremap sr %s/         
 
 " Compile and Run commands for various languages
-cnoremap js :!node %<CR>          " Run JavaScript
-cnoremap ct :!tsc %<CR>           " Compile TypeScript
-cnoremap rs :!sudo mysql -u root -p jpa_hibernate < sql.sql<CR>  " MySQL
-cnoremap cj :!javac %<CR>         " Compile Java
-cnoremap rj :!java %<CR>          " Run Java
-cnoremap rp :!python3 %<CR>       " Run Python
-cnoremap rd :!dart %<CR>          " Run Dart
-cnoremap rg :!go run %<CR>        " Run Go
-cnoremap rr :!Rscript %<CR>       " Run R
-cnoremap cc :!gcc -o c_my %<CR>   " Compile C
-cnoremap rc :!./c_my<CR>          " Run C
-cnoremap ccpp :!g++ -o cpp_my %<CR>  " Compile C++
-cnoremap rcpp :!./cpp_my<CR>      " Run C++
-cnoremap ck :!kotlinc kt.kt -include-runtime -d kt.jar<CR>  " Compile Kotlin
-cnoremap rk :!java -jar kt.jar<CR>  " Run Kotlin
-cnoremap rh :!php %<CR>           " Run PHP
-cnoremap rb :!bash %<CR>          " Run Bash
+cnoremap js :!node %<CR>
+cnoremap ct :!tsc %<CR>
+cnoremap cj :!javac %<CR>
+cnoremap rj :!java %<CR>
+cnoremap rp :!python3 %<CR>
+cnoremap rd :!dart %<CR>
+cnoremap rg :!go run %<CR>
+cnoremap rh :!php %<CR>
+cnoremap rb :!bash %<CR>
 
 
