@@ -105,14 +105,14 @@ cnoremap w :w!<CR>
 cnoremap sr %s/         
 
 " Compile and Run commands for various languages
-cnoremap js :!node %<CR>
-cnoremap ct :!tsc %<CR>
-cnoremap cj :!javac %<CR>
-cnoremap rj :!java %<CR>
+cnoremap rj :!node %<CR>
+cnoremap rv :!java %<CR>
 cnoremap rp :!python3 %<CR>
 cnoremap rd :!dart %<CR>
 cnoremap rg :!go run %<CR>
 cnoremap rh :!php %<CR>
 cnoremap rb :!bash %<CR>
+cnoremap ct :!tsc %<CR>
+cnoremap cv :!javac %<CR>
 
 
