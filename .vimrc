@@ -7,6 +7,7 @@ set relativenumber        " Show relative numbers for all other lines
 set showcmd               " Display incomplete commands
 set colorcolumn=80        " Highlight the 80th column (recommended line width)
 set showmatch             " Highlight matching braces, parentheses, etc.
+set hlsearch              " Highlight search results
 
 "===============================
 " Indentation and Tabs
