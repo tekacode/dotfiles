@@ -27,7 +27,7 @@
 - Ctrl + - takes you to where you were
 - Vim mark across multiple files —> m + a capital of a character
 - To highlight a text and add tags at the end —> select the text in vim visual mode —> press S< —> add the tag
-- Vs cod to search symbols from entire module —> #symbole name , from a single file —> %symbole name
+- Vs cod to search symbols from entire module —> #symbol name , from a single file —> %symbol name
 
 ### Vim Notes
 
