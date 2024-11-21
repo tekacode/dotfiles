@@ -1,0 +1,2 @@
+warning(junit.framework.TestSuite$1)
+junit.framework.AssertionFailedError: Exception in constructor: testFetchCarouselItems (java.lang.NoClassDefFoundError: org/apache/commons/logging/LogFactory

@@ -53,4 +53,3 @@
 - To refresh .vimrc —> :source%
 - To split your vim window into vertical split —> ctrl + w + v
 - To move the cursor between the spliced windows —> ctrl + w + hjkl
-- To google cursor b/n terminal and vim editor —> ctrl w w
