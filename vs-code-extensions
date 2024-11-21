@@ -1,12 +1,35 @@
--Code Spell chekder
--Debugger for java
--docker
--draw.io
--jupyter
--Live server
--postman
--prettier
--Python
--Shade of Purple
--spring boot
--vim
+{
+  "recommendations": [
+    "angular.ng-template",
+    "streetsidesoftware.code-spell-checker",
+    "alefragnani.bookmarks",
+    "ms-azuretools.vscode-docker",
+    "donjayamanne.githistory",
+    "amazonwebservices.aws-toolkit-vscode",
+    "wallabyjs.console-ninja",
+    "cweijan.vscode-mysql-client2",
+    "wallabyjs.quokka-vscode",
+    "johnpapa.angular2",
+    "cweijan.dbclient-jdbc",
+    "ms-vscode-remote.remote-containers",
+    "hediet.vscode-drawio",
+    "github.codespaces",
+    "github.copilot",
+    "xabikos.javascriptsnippets",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "redhat.java",
+    "ritwickdey.liveserver",
+    "shd101wyy.markdown-preview-enhanced",
+    "fallenmax.mithril-emmet",
+    "sdras.night-owl",
+    "mskelton.one-dark-theme",
+    "meshintelligenttechnologiesinc.pieces-vscode",
+    "pnp.polacode",
+    "postman.postman-for-vscode",
+    "esbenp.prettier-vscode",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ahmadawais.shades-of-purple",
+    "vscodevim.vim",
+    "redhat.vscode-yaml"
+  ]
+}
