@@ -1,5 +1,15 @@
 // Place your key bindings in this file to override the defaults
 [
+   {
+    "key": "s",
+    "command": "findJump.activate",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "-findJump.activate",
+    "when": "vim.mode == 'Normal'"
+  },  
   {
     "key": "cmd+k",
     "command": "editor.action.blockComment",
