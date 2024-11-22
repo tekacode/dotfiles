@@ -6,7 +6,6 @@ VSCODE_DIR="./.vscode"
 # Define the base URL for the remote repository
 REPO_URL="https://raw.githubusercontent.com/tekacode/dotfiles/refs/heads/master"
 
-
 # Create or clean the .vscode folder
 if [ -d "$VSCODE_DIR" ]; then
     echo "Cleaning existing .vscode directory..."
