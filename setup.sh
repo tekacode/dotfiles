@@ -1,17 +1,30 @@
 #!/bin/bash
 
-# Symlink VS Code settings
-# ln -sf /home/user/dotfiles/vscode-user-settings.json /home/user/dotfiles/.vscode/settings.json
-# ln -sf /home/user/dotfiles/vscode-user-keybinding.json /home/user/dotfiles/.vscode/keybindings.json
+# Define the .vscode folder in the current directory
+VSCODE_DIR="./.vscode"
 
-# Add other symlinks as needed
-#ln -sf ~/dotfiles/.bashrc ~/.bashrc
-#ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+# Define the base URL for the remote repository
+REPO_URL="https://raw.githubusercontent.com/tekacode/dotfiles/refs/heads/master"
 
-# echo "Dotfiles setup complete!"
 
-# Download the settings.json file from GitHub
-curl -o /home/user/dotfiles/.vscode/settings.json https://raw.githubusercontent.com/tekacode/dotfiles/refs/heads/master/vscode-user-settings.json
-# Download the keybindings.json file from GitHub
-curl -o /home/user/dotfiles/.vscode/keybindings.json https://raw.githubusercontent.com/tekacode/dotfiles/refs/heads/master/vscode-user-keybinding.json
-echo "VS Code settings have been fetched from the GitHub repository."
+# Create or clean the .vscode folder
+if [ -d "$VSCODE_DIR" ]; then
+    echo "Cleaning existing .vscode directory..."
+    rm -rf "$VSCODE_DIR"
+fi
+echo "Creating .vscode directory..."
+mkdir -p "$VSCODE_DIR"
+
+# Download settings.json
+echo "Downloading settings.json..."
+curl -o "$VSCODE_DIR/settings.json" "$REPO_URL/vscode-user-settings.json"
+
+# Download keybindings.json
+echo "Downloading keybindings.json..."
+curl -o "$VSCODE_DIR/keybindings.json" "$REPO_URL/vscode-user-keybinding.json"
+
+# Download extensions.json
+echo "Downloading extensions.json..."
+curl -o "$VSCODE_DIR/extensions.json" "$REPO_URL/vs-code-global-extensions.json"
+
+echo "Setup complete! The .vscode folder and files have been created or updated in the current folder."
