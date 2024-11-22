@@ -154,5 +154,6 @@
   },
   "files.autoSave": "afterDelay",
   "hediet.vscode-drawio.resizeImages": null,
-  "chatgpt.lang": "en"
+  "chatgpt.lang": "en",
+  "findJump.excludeNextChars": 1
 }
