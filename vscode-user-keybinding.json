@@ -2,12 +2,12 @@
    {
     "key": "s",
     "command": "findJump.activate",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
     "key": "ctrl+;",
     "command": "-findJump.activate",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },  
   {
     "key": "cmd+k",
