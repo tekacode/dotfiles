@@ -28,6 +28,7 @@ COLORS[React]="#61DBFB #61DBFB99" # Add more mappings if needed
 COLORS[Spring]="#6DB33F #6DB33F99" # Add more mappings if needed
 COLORS[JavaScript]="#8B8000 #8B800099" # Add more mappings if needed
 COLORS[Java]="#f89820 #f8982099" # Add more mappings if needed
+COLORS[Python]="#FFD43B #4B8BBE99" # Add more mappings if needed
 
 # Check if the parameter has a defined color mapping
 if [ -z "${COLORS[$PARAMETER]}" ]; then
@@ -41,16 +42,20 @@ IFS=' ' read -r -a NEW_COLORS <<< "${COLORS[$PARAMETER]}"
 # Function to replace patterns in a file
 replace_patterns() {
     local file="$1"
-    sed -i "s/\"activityBar.activeBackground\": \"#[a-fA-F0-9]\{6\}\"/\"activityBar.activeBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
-    sed -i "s/\"activityBar.background\": \"#[a-fA-F0-9]\{6\}\"/\"activityBar.background\": \"${NEW_COLORS[1]}\"/g" "$file"
-    sed -i "s/\"titleBar.activeBackground\": \"#[a-fA-F0-9]\{6\}\"/\"titleBar.activeBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
-    sed -i "s/\"statusBar.background\": \"#[a-fA-F0-9]\{6\}\"/\"statusBar.background\": \"${NEW_COLORS[1]}\"/g" "$file"
-    sed -i "s/\"titleBar.inactiveBackground\": \"#[a-fA-F0-9]\{6\}\"/\"titleBar.inactiveBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
+    echo "Modifying $file"
 
-    sed -i "s/\"statusBarItem.hoverBackground\": \"#[a-fA-F0-9]\{6\}\"/\"statusBarItem.hoverBackground\": \"${NEW_COLORS[0]}\"/g" "$file"
-    sed -i "s/\"statusBarItem.remoteBackground\": \"#[a-fA-F0-9]\{6\}\"/\"statusBarItem.remoteBackground\": \"${NEW_COLORS[0]}\"/g" "$file"
-    sed -i "s/\"sash.hoverBorder\": \"#[a-fA-F0-9]\{6\}\"/\"sash.hoverBorder\": \"${NEW_COLORS[0]}\"/g" "$file"
+    # Match both 6-character and 8-character hex codes
+    sed -i "s/\"activityBar.activeBackground\": \"#[a-fA-F0-9]\{6,8\}\"/\"activityBar.activeBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
+    sed -i "s/\"activityBar.background\": \"#[a-fA-F0-9]\{6,8\}\"/\"activityBar.background\": \"${NEW_COLORS[1]}\"/g" "$file"
+    sed -i "s/\"titleBar.activeBackground\": \"#[a-fA-F0-9]\{6,8\}\"/\"titleBar.activeBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
+    sed -i "s/\"statusBar.background\": \"#[a-fA-F0-9]\{6,8\}\"/\"statusBar.background\": \"${NEW_COLORS[1]}\"/g" "$file"
+    sed -i "s/\"titleBar.inactiveBackground\": \"#[a-fA-F0-9]\{6,8\}\"/\"titleBar.inactiveBackground\": \"${NEW_COLORS[1]}\"/g" "$file"
+
+    sed -i "s/\"statusBarItem.hoverBackground\": \"#[a-fA-F0-9]\{6,8\}\"/\"statusBarItem.hoverBackground\": \"${NEW_COLORS[0]}\"/g" "$file"
+    sed -i "s/\"statusBarItem.remoteBackground\": \"#[a-fA-F0-9]\{6,8\}\"/\"statusBarItem.remoteBackground\": \"${NEW_COLORS[0]}\"/g" "$file"
+    sed -i "s/\"sash.hoverBorder\": \"#[a-fA-F0-9]\{6,8\}\"/\"sash.hoverBorder\": \"${NEW_COLORS[0]}\"/g" "$file"
 }
+
 
 # Download settings.json and modify it
 echo "Downloading and modifying settings.json..."

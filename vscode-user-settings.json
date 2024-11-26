@@ -43,13 +43,14 @@
   "editor.guides.bracketPairs": true,
   // Terminal
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultLocation": "panel",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.fontSize": 18,
+  
   // Vim
   "vim.easymotion": true,
   "vim.sneak": true,
