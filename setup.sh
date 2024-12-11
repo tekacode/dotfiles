@@ -71,3 +71,5 @@ echo "Downloading extensions.json..."
 curl -s "$REPO_URL/vs-code-global-extensions.json" -o "$VSCODE_DIR/extensions.json"
 
 echo "Setup complete! The .vscode folder and files have been created or updated in the current folder."
+
+# this file needs to be updated to work on Ubuntu
