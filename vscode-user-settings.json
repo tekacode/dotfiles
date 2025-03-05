@@ -70,6 +70,14 @@
     {
       "before": ["<leader>", "p"],
       "commands": ["bookmarks.jumpToPrevious"]
+    },
+    {
+      "before": ["g", "e"],
+      "commands": ["editor.action.marker.next"]
+    },
+     {
+      "before": ["g", "E"],
+      "commands": ["editor.action.marker.prev"]
     }
   ],
   "vim.smartRelativeLine": true,
