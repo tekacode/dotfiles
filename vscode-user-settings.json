@@ -78,7 +78,15 @@
      {
       "before": ["g", "E"],
       "commands": ["editor.action.marker.prev"]
-    }
+    },
+    {
+        "before": ["g", "s"],
+        "after": ["*"]
+    },
+    {
+        "before": ["g", "S"],
+        "after": ["#"]
+    }  
   ],
   "vim.smartRelativeLine": true,
   "vim.insertModeKeyBindings": [
