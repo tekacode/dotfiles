@@ -86,7 +86,15 @@
     {
         "before": ["g", "S"],
         "after": ["#"]
-    }  
+    },
+    {
+      "before": ["g", "o"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["workbench.action.navigateForward"]
+    } 
   ],
   "vim.smartRelativeLine": true,
   "vim.insertModeKeyBindings": [
