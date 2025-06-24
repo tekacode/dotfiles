@@ -116,24 +116,3 @@ cnoremap rb :!bash %<CR>
 cnoremap ct :!tsc %<CR>
 cnoremap cv :!javac %<CR>
 
-"===============================
-" Show file name in the tabs
-"===============================
-
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    let tabnr = i + 1
-    let winnr = tabpagewinnr(tabnr)
-    let buflist = tabpagebuflist(tabnr)
-    let bufnr = buflist[winnr - 1]
-    let bufname = bufname(bufnr)
-    let filename = bufname == '' ? '[No Name]' : fnamemodify(bufname, ':t')
-
-    let s .= '%' . tabnr . 'T'
-    let s .= (tabnr == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tabnr . ': ' . filename . ' '
-  endfor
-  let s .= '%#TabLineFill#%T'
-  return substitute(s, '[[:cntrl:]]', '', 'g') " Remove control characters
-endfunction
