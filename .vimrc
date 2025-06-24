@@ -120,9 +120,6 @@ cnoremap cv :!javac %<CR>
 " Show file name in the tabs
 "===============================
 
-set showtabline=2
-set tabline=%!MyTabLine()
-
 function! MyTabLine()
   let s = ''
   for i in range(tabpagenr('$'))
@@ -132,15 +129,11 @@ function! MyTabLine()
     let bufnr = buflist[winnr - 1]
     let bufname = bufname(bufnr)
     let filename = bufname == '' ? '[No Name]' : fnamemodify(bufname, ':t')
+
     let s .= '%' . tabnr . 'T'
-    if tabnr == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
+    let s .= (tabnr == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tabnr . ': ' . filename . ' '
   endfor
   let s .= '%#TabLineFill#%T'
-  return s
+  return substitute(s, '[[:cntrl:]]', '', 'g') " Remove control characters
 endfunction
-
