@@ -31,6 +31,9 @@ syntax on                 " Enable syntax highlighting
 " Exit insert mode with 'jk'
 inoremap jk <Esc>
 
+"  Run selected lines in visual mode using zsh
+xnoremap rr :<C-U>'<,'>w !zsh<CR>
+
 " Quickly insert a new line without entering insert mode
 nnoremap kj o<Esc>
 
