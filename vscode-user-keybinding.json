@@ -84,5 +84,11 @@
     "key": "ctrl+-",
     "command": "-workbench.action.navigateBack",
     "when": "canNavigateBack"
-  }
+  },
+    // Run selected code in terminal
+  {
+  "key": "cmd+r",
+  "command": "workbench.action.terminal.runSelectedText",
+  "when": "editorTextFocus && editorHasSelection"
+ }
 ]
