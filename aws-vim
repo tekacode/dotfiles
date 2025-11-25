@@ -1,0 +1,58 @@
+# S3 COMMANDS
+# list buckets
+aws s3 ls 
+# list bucket
+aws s3 ls s3://my-bucket
+
+# LAMBDA COMMANDS
+# list functions
+aws lambda list-functions | jq .
+
+# DYNAMODB COMMANDS
+# list tables
+aws dynamodb list-tables
+
+aws dynamodb describe-table \
+--table-name TripsTable \
+--region us-east-1 \
+> dump.json
+
+# EC2 COMMANDS
+# list instances
+aws ec2 describe-instances
+
+# IAM COMMANDS
+# list users
+aws iam list-users | jq .
+
+# CLOUDWATCH COMMANDS
+# list log groups
+aws logs describe-log-groups
+
+# RDS COMMANDS
+# list DB instances
+aws rds describe-db-instances
+
+# VPC COMMANDS
+# list VPCs
+aws ec2 describe-vpcs
+
+# AWS GLUE COMMANDS
+# list databases
+aws glue get-databases
+
+# AWS SQS COMMANDS
+# list queues
+aws sqs list-queues
+
+# AWS SNS COMMANDS
+# list topics
+aws sns list-topics
+
+# AWS EVENTBRIDGE COMMANDS
+# list event buses
+aws events list-event-buses
+
+# AWS CLOUDFORMATION COMMANDS
+# list stacks
+aws cloudformation describe-stacks
